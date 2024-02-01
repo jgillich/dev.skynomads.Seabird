@@ -35,3 +35,8 @@ modules:
         strip-components: 0
         url: https://github.com/getseabird/seabird/releases/download/v0.0.20/source.zip
         sha256: af43471fe9964ccd8af67fe3e8ba419cf01762f4d1f8d30065e3b6b438a88b44
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/getseabird/seabird/releases/latest
+          version-query: .tag_name | sub("^[vV]"; "")
+          url-query: .assets[] | select(.name=="source.zip") | .browser_download_url
