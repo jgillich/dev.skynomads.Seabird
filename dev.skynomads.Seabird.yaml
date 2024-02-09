@@ -1,6 +1,6 @@
 app-id: dev.skynomads.Seabird
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: "45"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -19,6 +19,16 @@ finish-args:
   - --filesystem=home
 
 modules:
+  - name: vte
+    buildsystem: meson
+    config-opts:
+      - -Dgtk4=true
+      - -Dgtk3=false
+      - -Dsixel=true
+    sources:
+      - type: archive
+        url: https://gitlab.gnome.org/GNOME/vte/-/archive/0.75.0/vte-0.75.0.tar.gz
+        sha256: 3a12c6ddd2431a78ae69fc9f451a0b1b179e7577ec2cdb5ad17993b83a609a53
   - name: seabird
     buildsystem: simple
     build-commands:
@@ -33,8 +43,8 @@ modules:
     sources:
       - type: archive
         strip-components: 0
-        url: https://github.com/getseabird/seabird/releases/download/v0.0.25/source.zip
-        sha256: 5d125f8f6a44a0b2184274a603d71bba9d93f940de12b2defbab335b9e994067
+        url: https://github.com/getseabird/seabird/releases/download/v0.1.0/source.zip
+        sha256: 9daadad3171e3d77947cb89f53e2dfcd37bad205af1839b808c895bcb0edf317
         x-checker-data:
           type: json
           url: https://api.github.com/repos/getseabird/seabird/releases/latest
