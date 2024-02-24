@@ -37,7 +37,7 @@ modules:
         $GOROOT/bin/go generate ./...
         $GOROOT/bin/go build -trimpath -ldflags '-s -w' -o seabird
         install -Dm00755 -t /app/bin seabird
-        install -Dm00644 icon/seabird.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
+        install -Dm00644 internal/icon/seabird.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
         install -Dm00644 -t /app/share/applications $FLATPAK_ID.desktop
         install -Dm00644 -t /app/share/metainfo $FLATPAK_ID.appdata.xml
     sources:
