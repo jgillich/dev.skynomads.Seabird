@@ -1,6 +1,6 @@
 app-id: dev.skynomads.Seabird
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: "45"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.golang
@@ -43,8 +43,8 @@ modules:
     sources:
       - type: archive
         strip-components: 0
-        url: https://github.com/getseabird/seabird/releases/download/v0.1.1/source.zip
-        sha256: ea87dd61b0413a782033f59905d7f7a4ba8a03d348f88a13aac42344a2ef92c3
+        url: https://github.com/getseabird/seabird/releases/download/v0.1.2/source.zip
+        sha256: 6acf0cbd9ff7a8533b11c828b879cf727d70650c1a168ee5334d742962a532d3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/getseabird/seabird/releases/latest
